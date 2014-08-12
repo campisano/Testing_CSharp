@@ -1,5 +1,6 @@
 ﻿using NLayer.Common.Pattern.Command;
-using NLayer.Presentation;
+using NLayer.Presentation.IView;
+using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
 using System.Windows;
 

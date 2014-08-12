@@ -1,5 +1,6 @@
 ﻿using NLayer.Common.MVVM;
-using NLayer.Presentation;
+using NLayer.Presentation.IView;
+using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
 using MVVMCommand = System.Windows.Input;
 using PatternsCommand = NLayer.Common.Pattern.Command;

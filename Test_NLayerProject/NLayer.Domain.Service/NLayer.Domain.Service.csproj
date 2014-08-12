@@ -41,13 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerService.cs" />
+    <Compile Include="SystemOperation\LogService.cs" />
+    <Compile Include="SystemOperation\CustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemOperation\Response\DrawLogResponse.cs" />
+    <Compile Include="Util\DatFile.cs" />
+    <Compile Include="Util\DatWriter.cs" />
+    <Compile Include="Util\DatLoader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NLayer.Domain.Repository\NLayer.Domain.Repository.csproj">
+    <ProjectReference Include="..\NLayer.Domain.InMemoryRepository\NLayer.Domain.InMemoryRepository.csproj">
       <Project>{5e642a4e-e215-44d6-b77c-a12ad9109fef}</Project>
-      <Name>NLayer.Domain.Repository</Name>
+      <Name>NLayer.Domain.InMemoryRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NLayer.Domain\NLayer.Domain.csproj">
+      <Project>{78bd3f9b-6e71-4503-b088-9dcfd4229e0b}</Project>
+      <Name>NLayer.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

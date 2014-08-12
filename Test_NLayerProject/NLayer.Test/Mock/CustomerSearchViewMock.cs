@@ -1,5 +1,5 @@
 ﻿using NLayer.Common.Pattern.Command;
-using NLayer.Presentation;
+using NLayer.Presentation.IView;
 using System.Collections.Generic;
 
 namespace NLayer.Test.Mock

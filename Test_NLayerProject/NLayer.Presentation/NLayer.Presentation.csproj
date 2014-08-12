@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerSearchPresenter.cs" />
-    <Compile Include="ICustomerSearchView.cs" />
+    <Compile Include="IView\IDrawLogView.cs" />
+    <Compile Include="Presenter\ImportLogPresenter.cs" />
+    <Compile Include="Presenter\CustomerSearchPresenter.cs" />
+    <Compile Include="IView\ICustomerSearchView.cs" />
+    <Compile Include="IView\IImportLogView.cs" />
+    <Compile Include="Presenter\DrawLogPresenter.cs" />
+    <Compile Include="Presenter\LogListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IView\ILogListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NLayer.Common\NLayer.Common.csproj">

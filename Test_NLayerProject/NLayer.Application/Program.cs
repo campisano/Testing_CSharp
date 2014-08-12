@@ -1,6 +1,7 @@
-﻿using NLayer.Domain.Repository;
-using NLayer.Domain.Service;
-using NLayer.Presentation;
+﻿using NLayer.Domain.InMemoryRepository;
+using NLayer.Domain.Repository;
+using NLayer.Domain.Service.SystemOperation;
+using NLayer.Presentation.IView;
 using System;
 using System.Collections.Generic;
 using System.Threading;

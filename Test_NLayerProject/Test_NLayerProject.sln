@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Presentation", "NLay
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPF", "NLayer.WPF\NLayer.WPF.csproj", "{86B41D72-B9FA-46B8-951F-857BAED6AC61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain.Repository", "NLayer.Domain.Repository\NLayer.Domain.Repository.csproj", "{5E642A4E-E215-44D6-B77C-A12AD9109FEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain.InMemoryRepository", "NLayer.Domain.InMemoryRepository\NLayer.Domain.InMemoryRepository.csproj", "{5E642A4E-E215-44D6-B77C-A12AD9109FEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain.Service", "NLayer.Domain.Service\NLayer.Domain.Service.csproj", "{EE432AC5-33C6-477D-AE51-7D38D9F1EDD9}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPFMVVM.View", "NLayer.WPFMVVM.View\NLayer.WPFMVVM.View.csproj", "{90DB0FF9-5820-4822-A08A-7912AB574C70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPFMVVM.ViewModel", "NLayer.WPFMVVM.ViewModel\NLayer.WPFMVVM.ViewModel.csproj", "{947300AD-2625-467F-88A5-68BAF2706BAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain", "NLayer.Domain\NLayer.Domain.csproj", "{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{947300AD-2625-467F-88A5-68BAF2706BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947300AD-2625-467F-88A5-68BAF2706BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947300AD-2625-467F-88A5-68BAF2706BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
