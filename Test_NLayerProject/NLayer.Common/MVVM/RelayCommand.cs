@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace NLayer.Common.MVVM
 {
-    public class RelayCommand : System.Windows.Input.ICommand
+    public class RelayCommand : ICommand
     {
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;
@@ -47,7 +47,7 @@ namespace NLayer.Common.MVVM
         #endregion
     }
 
-    public class RelayCommand<T> : System.Windows.Input.ICommand
+    public class RelayCommand<T> : ICommand
     {
         private readonly Action<T> _execute = null;
         private readonly Predicate<T> _canExecute = null;

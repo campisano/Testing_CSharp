@@ -44,6 +44,8 @@
     <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="Pattern\Command\ICommand.cs" />
     <Compile Include="Pattern\Command\SimpleCommand.cs" />
+    <Compile Include="MVVM\IDialogService.cs" />
+    <Compile Include="Pattern\IODContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

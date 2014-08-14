@@ -1,0 +1,14 @@
+﻿<Window x:Class="NLayer.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="300">
+    <StackPanel Orientation="Vertical">
+        <Label Content="MVP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Vertical">
+            <Button Content="OpenCustomerSearch" Click="OnOpenCustomerSearch"/>
+            <Button Content="OpenImportLog" Click="OnOpenImportLog"/>
+            <Button Content="OpenLogList" Click="OnOpenLogList"/>
+            <Button Content="OpenDrawLog" Click="OnOpenDrawLog"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

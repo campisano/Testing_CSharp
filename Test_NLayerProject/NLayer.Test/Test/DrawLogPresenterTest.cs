@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace NLayer.Test.Test
 {
     [TestClass]
-    public class ViewDrawLogPresenterTest
+    public class DrawLogPresenterTest
     {
         [TestMethod]
         public void ShouldViewShowSpecificLog()

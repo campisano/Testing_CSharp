@@ -94,6 +94,13 @@ namespace NLayer.Domain.Service.SystemOperation
             return new DrawLogResponse(log.Name, log.Values, logAp.Color, logAp.Thickness);
         }
 
+        public int GetLogPointsNum(string name)
+        {
+            Log log = LogRepository.GetLog(name);
+
+            return log.Values.Count;
+        }
+
         #endregion
 
         #region private

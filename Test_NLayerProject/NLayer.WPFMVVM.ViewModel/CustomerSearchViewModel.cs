@@ -2,6 +2,7 @@
 using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using MVVMCommand = System.Windows.Input;
 using PatternsCommand = NLayer.Common.Pattern.Command;
 
@@ -44,14 +45,13 @@ namespace NLayer.WPFMVVM.ViewModel
         }
 
         public PatternsCommand.ICommand DoReset { get; set; }
-
         public PatternsCommand.ICommand DoSearch { get; set; }
 
         private IList<string> _searchResults;
         public IList<string> SearchResults
         {
             get { return _searchResults; }
-            set { _searchResults = value; RaisePropertyChanged(() => SearchResults); }
+            set { _searchResults = new ObservableCollection<string>(value); RaisePropertyChanged(() => SearchResults); }
         }
 
         #endregion

@@ -46,7 +46,7 @@ namespace NLayer.Presentation.Presenter
             {
                 if (_service.Import(inputFilePath, logName))
                 {
-                    _view.MessageResult = "Log imported.";
+                    _view.MessageResult = "Log imported: " + _service.GetLogPointsNum(logName) + " points.";
                 }
                 else
                 {

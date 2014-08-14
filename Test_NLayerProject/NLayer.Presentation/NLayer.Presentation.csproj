@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\IMainWindowView.cs" />
     <Compile Include="IView\IDrawLogView.cs" />
+    <Compile Include="Presenter\MainWindowPresenter.cs" />
     <Compile Include="Presenter\ImportLogPresenter.cs" />
     <Compile Include="Presenter\CustomerSearchPresenter.cs" />
     <Compile Include="IView\ICustomerSearchView.cs" />

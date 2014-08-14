@@ -27,7 +27,19 @@ namespace NLayer.Domain.InMemoryRepository
 
         public LogApparence GetLogApparence(string name)
         {
-            return _logApparences.Where(c => c.Name.Equals(name)).Single();
+            LogApparence app;
+
+            if (_logApparences.Where(c => c.Name.Equals(name)).Count() == 0)
+            {
+                app = new LogApparence(name, "Black", 1);
+                _logApparences.Add(app);
+            }
+            else
+            {
+                app = _logApparences.Where(c => c.Name.Equals(name)).Single();
+            }
+
+            return app;
         }
 
         #endregion

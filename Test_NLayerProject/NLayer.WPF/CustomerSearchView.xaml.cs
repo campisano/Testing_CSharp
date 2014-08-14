@@ -2,18 +2,25 @@
 using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace NLayer.WPF
 {
     public partial class CustomerSearchView : Window, ICustomerSearchView
     {
+        #region Constructors
+
         public CustomerSearchView()
         {
             InitializeComponent();
 
             new CustomerSearchPresenter(this);
         }
+
+        #endregion
+
+        #region Methods
 
         private void OnResetClick(object sender, RoutedEventArgs e)
         {
@@ -25,6 +32,8 @@ namespace NLayer.WPF
             DoSearch.Execute();
         }
 
+        #endregion
+
         #region ICustomerSearchView
 
         public string SearchQuery
@@ -34,13 +43,12 @@ namespace NLayer.WPF
         }
 
         public ICommand DoReset { get; set; }
-
         public ICommand DoSearch { get; set; }
 
         public IList<string> SearchResults
         {
             get { return (IList<string>)xamlSearchResults.ItemsSource; }
-            set { xamlSearchResults.ItemsSource = value; }
+            set { xamlSearchResults.ItemsSource = new ObservableCollection<string>(value); }
         }
 
         #endregion

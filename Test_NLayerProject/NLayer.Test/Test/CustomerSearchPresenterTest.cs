@@ -12,7 +12,7 @@ namespace NLayer.Test.Test
     //from http://msdn.microsoft.com/en-us/magazine/cc188690.aspx
 
     [TestClass]
-    public class ViewCustomerPresenterTest
+    public class CustomerSearchPresenterTest
     {
         [TestMethod]
         public void ShouldViewOpenReturnAllCustomers()
