@@ -45,19 +45,19 @@ namespace NLayer.Application
                 container.RegisterType(typeof(I_DialogService), typeof(DialogService));
 
                 container.RegisterType(typeof(I_MainWindowView), typeof(NLayer.WPFMVVM.View.MainWindow));
-                //container.RegisterType(typeof(I_MainWindowView), typeof(NLayer.WPF.MainWindow));
+                //container.RegisterType(typeof(I_MainWindowView), typeof(NLayer.WPFMVP.MainWindow));
 
                 container.RegisterType(typeof(I_LogSearchView), typeof(NLayer.WPFMVVM.View.LogSearchView));
-                //container.RegisterType(typeof(I_LogSearchView), typeof(NLayer.WPF.LogSearchView));
+                //container.RegisterType(typeof(I_LogSearchView), typeof(NLayer.WPFMVP.LogSearchView));
 
                 //container.RegisterType(typeof(I_LogImportView), typeof(NLayer.WPFMVVM.View.LogImportView));
-                container.RegisterType(typeof(I_LogImportView), typeof(NLayer.WPF.LogImportView));
+                container.RegisterType(typeof(I_LogImportView), typeof(NLayer.WPFMVP.LogImportView));
 
                 //container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPFMVVM.View.LogListView));
-                container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPF.LogListView));
+                container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPFMVP.LogListView));
 
                 //container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPFMVVM.View.LogDrawView));
-                container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPF.LogDrawView));
+                container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPFMVP.LogDrawView));
 
                 var mainWindow = container.Resolve<Window>(typeof(I_MainWindowView));
                 mainWindow.Show();

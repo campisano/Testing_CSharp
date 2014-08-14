@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Test", "NLayer.Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Presentation", "NLayer.Presentation\NLayer.Presentation.csproj", "{586A18E3-8227-4D6D-812C-F5117119E2B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPF", "NLayer.WPF\NLayer.WPF.csproj", "{86B41D72-B9FA-46B8-951F-857BAED6AC61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPFMVP", "NLayer.WPFMVP\NLayer.WPFMVP.csproj", "{86B41D72-B9FA-46B8-951F-857BAED6AC61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain.InMemoryRepository", "NLayer.Domain.InMemoryRepository\NLayer.Domain.InMemoryRepository.csproj", "{5E642A4E-E215-44D6-B77C-A12AD9109FEF}"
 EndProject

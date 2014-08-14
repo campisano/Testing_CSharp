@@ -3,7 +3,7 @@ using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Windows;
 
-namespace NLayer.WPF
+namespace NLayer.WPFMVP
 {
     public partial class MainWindow : Window, I_MainWindowView
     {

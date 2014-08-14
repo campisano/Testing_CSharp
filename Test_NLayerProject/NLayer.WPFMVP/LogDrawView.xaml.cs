@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 
-namespace NLayer.WPF
+namespace NLayer.WPFMVP
 {
     public partial class LogDrawView : Window, I_LogDrawView
     {

@@ -1,4 +1,4 @@
-﻿<Window x:Class="NLayer.WPF.LogImportView"
+﻿<Window x:Class="NLayer.WPFMVP.LogImportView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="LogImportView" Height="300" Width="300">

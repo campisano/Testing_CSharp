@@ -76,9 +76,9 @@
       <Project>{90db0ff9-5820-4822-a08a-7912ab574c70}</Project>
       <Name>NLayer.WPFMVVM.View</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NLayer.WPF\NLayer.WPF.csproj">
+    <ProjectReference Include="..\NLayer.WPFMVP\NLayer.WPFMVP.csproj">
       <Project>{86b41d72-b9fa-46b8-951f-857baed6ac61}</Project>
-      <Name>NLayer.WPF</Name>
+      <Name>NLayer.WPFMVP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

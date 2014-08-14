@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 
-namespace NLayer.WPF
+namespace NLayer.WPFMVP
 {
     public partial class LogSearchView : Window, I_LogSearchView
     {
