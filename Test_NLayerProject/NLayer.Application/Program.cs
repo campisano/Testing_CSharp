@@ -56,6 +56,9 @@ namespace NLayer.Application
                 //container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPFMVVM.View.LogListView));
                 container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPF.LogListView));
 
+                //container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPFMVVM.View.LogDrawView));
+                container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPF.LogDrawView));
+
                 var mainWindow = container.Resolve<Window>(typeof(I_MainWindowView));
                 mainWindow.Show();
                 mainWindow.Closed += (s, e) => System.Windows.Threading.Dispatcher.ExitAllFrames();

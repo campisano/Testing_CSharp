@@ -8,7 +8,7 @@ namespace NLayer.Test.Mock
     {
         #region Properties
 
-        public string Name { get; set; }
+        public string LogName { get; set; }
         public I_Command DoDraw { get; set; }
         public string Color { get; set; }
         public int Thickness { get; set; }

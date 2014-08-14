@@ -35,11 +35,11 @@ namespace NLayer.Test.Test
             I_LogDrawView view = new LogDrawViewMock();
             LogDrawPresenter presenter = new LogDrawPresenter(view);
 
-            view.Name = testLog.Name;
+            view.LogName = testLog.Name;
             view.DoDraw.Execute();
 
             // Assert
-            Assert.AreEqual(testLog.Name, view.Name);
+            Assert.AreEqual(testLog.Name, view.LogName);
             Assert.AreEqual(color, view.Color);
             Assert.AreEqual(thickness, view.Thickness);
             Assert.AreEqual(testLog.Values.Count, view.Points.Count);

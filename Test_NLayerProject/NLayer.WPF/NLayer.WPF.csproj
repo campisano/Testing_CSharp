@@ -37,6 +37,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InfragisticsWPF4.Controls.Charts.XamDataChart.v13.1">
+      <HintPath>..\Lib\InfragisticsWPF4.Controls.Charts.XamDataChart.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataVisualization.v13.1">
+      <HintPath>..\Lib\InfragisticsWPF4.DataVisualization.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.v13.1">
+      <HintPath>..\Lib\InfragisticsWPF4.v13.1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -52,10 +61,17 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="LogDrawView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="LogDrawView.xaml.cs">
+      <DependentUpon>LogDrawView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogSearchView.xaml.cs">
       <DependentUpon>LogSearchView.xaml</DependentUpon>
       <SubType>Code</SubType>

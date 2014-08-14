@@ -23,6 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.WPFMVVM.ViewModel", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Domain", "NLayer.Domain\NLayer.Domain.csproj", "{78BD3F9B-6E71-4503-B088-9DCFD4229E0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{71ABDABF-AB8C-4B80-B2D2-34A700094BFE}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\InfragisticsWPF4.Controls.Charts.XamDataChart.v13.1.dll = Lib\InfragisticsWPF4.Controls.Charts.XamDataChart.v13.1.dll
+		Lib\InfragisticsWPF4.DataVisualization.v13.1.dll = Lib\InfragisticsWPF4.DataVisualization.v13.1.dll
+		Lib\InfragisticsWPF4.v13.1.dll = Lib\InfragisticsWPF4.v13.1.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

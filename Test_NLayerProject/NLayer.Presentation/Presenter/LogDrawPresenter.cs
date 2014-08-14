@@ -17,7 +17,7 @@ namespace NLayer.Presentation.Presenter
         {
             _service = LogService.Instance;
             _view = view;
-            _view.Name = string.Empty;
+            _view.LogName = string.Empty;
             _view.DoDraw = new SimpleCommand(LogDraw);
             _view.Color = string.Empty;
             _view.Thickness = 0;
@@ -32,8 +32,8 @@ namespace NLayer.Presentation.Presenter
         {
             _view.Points.Clear();
 
-            LogDrawResponse resp = _service.GetLogDraw(_view.Name);
-            _view.Name = resp.Name;
+            LogDrawResponse resp = _service.GetLogDraw(_view.LogName);
+            _view.LogName = resp.Name;
             _view.Color = resp.Color;
             _view.Thickness = resp.Thickness;
 

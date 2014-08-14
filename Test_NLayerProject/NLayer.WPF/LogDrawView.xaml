@@ -1,0 +1,27 @@
+﻿<Window x:Class="NLayer.WPF.LogDrawView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ig="http://schemas.infragistics.com/xaml"
+        Title="LogDrawView" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ig:XamDataChart Name="xamDataChart">
+                <ig:XamDataChart.Axes>
+                    <ig:NumericXAxis Name="xamlXAxis" />
+                    <ig:NumericYAxis Name="xamlYAxis" />
+                </ig:XamDataChart.Axes>
+            </ig:XamDataChart>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Log name" />
+                <TextBox Name="xamlLogName" Width="100" />
+                <Button Content="Draw" Width="75" Click="OnDraw" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
