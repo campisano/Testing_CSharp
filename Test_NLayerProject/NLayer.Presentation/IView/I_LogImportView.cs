@@ -2,11 +2,11 @@
 
 namespace NLayer.Presentation.IView
 {
-    public interface IImportLogView
+    public interface I_LogImportView
     {
         string InputFilePath { get; set; }
         string LogName { get; set; }
-        ICommand DoImport { get; set; }
+        I_Command DoImport { get; set; }
         string MessageResult { get; set; }
     }
 }

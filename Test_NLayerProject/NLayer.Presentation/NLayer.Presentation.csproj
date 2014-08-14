@@ -41,17 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IView\IMainWindowView.cs" />
-    <Compile Include="IView\IDrawLogView.cs" />
+    <Compile Include="IView\I_MainWindowView.cs" />
+    <Compile Include="IView\I_LogDrawView.cs" />
     <Compile Include="Presenter\MainWindowPresenter.cs" />
-    <Compile Include="Presenter\ImportLogPresenter.cs" />
-    <Compile Include="Presenter\CustomerSearchPresenter.cs" />
-    <Compile Include="IView\ICustomerSearchView.cs" />
-    <Compile Include="IView\IImportLogView.cs" />
-    <Compile Include="Presenter\DrawLogPresenter.cs" />
+    <Compile Include="Presenter\LogImportPresenter.cs" />
+    <Compile Include="Presenter\LogSearchPresenter.cs" />
+    <Compile Include="IView\I_LogSearchView.cs" />
+    <Compile Include="IView\I_LogImportView.cs" />
+    <Compile Include="Presenter\LogDrawPresenter.cs" />
     <Compile Include="Presenter\LogListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IView\ILogListView.cs" />
+    <Compile Include="IView\I_LogListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NLayer.Common\NLayer.Common.csproj">

@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="InMemoryLogApparenceRepository.cs" />
     <Compile Include="InMemoryLogRepository.cs" />
-    <Compile Include="InMemoryCustomerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

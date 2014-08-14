@@ -5,10 +5,10 @@
     <StackPanel Orientation="Vertical">
         <Label Content="MVP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Orientation="Vertical">
-            <Button Content="OpenCustomerSearch" Click="OnOpenCustomerSearch"/>
-            <Button Content="OpenImportLog" Click="OnOpenImportLog"/>
+            <Button Content="OpenLogSearch" Click="OnOpenLogSearch"/>
+            <Button Content="OpenLogListView" Click="OnOpenLogImport"/>
             <Button Content="OpenLogList" Click="OnOpenLogList"/>
-            <Button Content="OpenDrawLog" Click="OnOpenDrawLog"/>
+            <Button Content="OpenLogDraw" Click="OnOpenLogDraw"/>
         </StackPanel>
     </StackPanel>
 </Window>

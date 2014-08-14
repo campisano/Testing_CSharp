@@ -1,6 +1,6 @@
 ﻿namespace NLayer.Common.Pattern.Command
 {
-    public class SimpleCommand : ICommand
+    public class SimpleCommand : I_Command
     {
         private CommandDelegate _command;
 

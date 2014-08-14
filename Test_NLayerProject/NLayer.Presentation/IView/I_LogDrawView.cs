@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace NLayer.Presentation.IView
 {
-    public interface IDrawLogView
+    public interface I_LogDrawView
     {
         string Name { get; set; }
-        ICommand DoDraw { get; set;} 
+        I_Command DoDraw { get; set;} 
         string Color { get; set; }
         int Thickness { get; set; }
         IList<KeyValuePair<double, double>> Points { get; set; }

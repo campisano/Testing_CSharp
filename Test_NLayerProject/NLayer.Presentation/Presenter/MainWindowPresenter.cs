@@ -7,43 +7,43 @@ namespace NLayer.Presentation.Presenter
 {
     public class MainWindowPresenter
     {
-        private IDialogService _service;
-        private IMainWindowView _view;
+        private I_DialogService _service;
+        private I_MainWindowView _view;
 
         #region Constructors
 
-        public MainWindowPresenter(IMainWindowView view)
+        public MainWindowPresenter(I_MainWindowView view)
         {
-            _service = IODContainer.Instance.Resolve<IDialogService>(typeof(IDialogService));
+            _service = IODContainer.Instance.Resolve<I_DialogService>(typeof(I_DialogService));
             _view = view;
-            _view.DoOpenCustomerSearch = new SimpleCommand(OpenCustomerSearch);
-            _view.DoOpenImportLog = new SimpleCommand(OpenImportLog);
+            _view.DoOpenLogSearch = new SimpleCommand(OpenLogSearch);
+            _view.DoOpenLogImport = new SimpleCommand(OpenLogImport);
             _view.DoOpenLogList = new SimpleCommand(OpenLogList);
-            _view.DoOpenDrawLog = new SimpleCommand(OpenDrawLog);
+            _view.DoOpenLogDraw = new SimpleCommand(OpenLogDraw);
         }
 
         #endregion
 
         #region Methods
 
-        public void OpenCustomerSearch()
+        public void OpenLogSearch()
         {
-            _service.ShowWindow(typeof(ICustomerSearchView), false);
+            _service.ShowWindow(typeof(I_LogSearchView), false);
         }
 
-        public void OpenImportLog()
+        public void OpenLogImport()
         {
-            _service.ShowWindow(typeof(IImportLogView), false);
+            _service.ShowWindow(typeof(I_LogImportView), false);
         }
 
         public void OpenLogList()
         {
-            _service.ShowWindow(typeof(ILogListView), false);
+            _service.ShowWindow(typeof(I_LogListView), false);
         }
 
-        public void OpenDrawLog()
+        public void OpenLogDraw()
         {
-            _service.ShowWindow(typeof(IDrawLogView), false);
+            _service.ShowWindow(typeof(I_LogDrawView), false);
         }
 
         #endregion

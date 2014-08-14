@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace NLayer.Test.Mock
 {
-    public class CustomerSearchViewMock : ICustomerSearchView
+    public class LogSearchViewMock : I_LogSearchView
     {
         #region Properties
 
         public string SearchQuery { get; set; }
-        public ICommand DoReset { get; set; }
-        public ICommand DoSearch { get; set; }
+        public I_Command DoReset { get; set; }
+        public I_Command DoSearch { get; set; }
         public IList<string> SearchResults { get; set; }
 
         #endregion

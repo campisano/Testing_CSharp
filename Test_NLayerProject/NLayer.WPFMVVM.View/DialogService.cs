@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace NLayer.WPFMVVM.View
 {
-    public sealed class DialogService : IDialogService
+    public sealed class DialogService : I_DialogService
     {
         #region Constructors
 
@@ -15,7 +15,7 @@ namespace NLayer.WPFMVVM.View
 
         #endregion
 
-        #region IDialogService
+        #region I_DialogService
 
         public void ShowMessage(string msg)
         {

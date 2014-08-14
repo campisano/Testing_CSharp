@@ -7,15 +7,15 @@ using System.Windows;
 
 namespace NLayer.WPF
 {
-    public partial class CustomerSearchView : Window, ICustomerSearchView
+    public partial class LogSearchView : Window, I_LogSearchView
     {
         #region Constructors
 
-        public CustomerSearchView()
+        public LogSearchView()
         {
             InitializeComponent();
 
-            new CustomerSearchPresenter(this);
+            new LogSearchPresenter(this);
         }
 
         #endregion
@@ -34,7 +34,7 @@ namespace NLayer.WPF
 
         #endregion
 
-        #region ICustomerSearchView
+        #region I_LogSearchView
 
         public string SearchQuery
         {
@@ -42,8 +42,8 @@ namespace NLayer.WPF
             set { xamlSearchQuery.Text = value; }
         }
 
-        public ICommand DoReset { get; set; }
-        public ICommand DoSearch { get; set; }
+        public I_Command DoReset { get; set; }
+        public I_Command DoSearch { get; set; }
 
         public IList<string> SearchResults
         {

@@ -2,7 +2,7 @@
 
 namespace NLayer.Domain.Repository
 {
-    public interface ILogApparenceRepository
+    public interface I_LogApparenceRepository
     {
         LogApparence GetLogApparence(string name);
     }

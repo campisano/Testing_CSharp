@@ -2,7 +2,7 @@
 
 namespace NLayer.Domain.Service.SystemOperation.Response
 {
-    public class DrawLogResponse
+    public class LogDrawResponse
     {
         #region Properties
 
@@ -15,7 +15,7 @@ namespace NLayer.Domain.Service.SystemOperation.Response
 
         #region Constructors
 
-        public DrawLogResponse(string name, IDictionary<int, double> dictionary, string color, int thickness)
+        public LogDrawResponse(string name, IDictionary<int, double> dictionary, string color, int thickness)
         {
             Name = name;
             Values = dictionary;

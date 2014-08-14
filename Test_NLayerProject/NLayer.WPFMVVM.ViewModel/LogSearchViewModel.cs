@@ -1,25 +1,25 @@
 ﻿using NLayer.Common.MVVM;
+using NLayer.Common.Pattern.Command;
 using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using MVVMCommand = System.Windows.Input;
-using PatternsCommand = NLayer.Common.Pattern.Command;
+using System.Windows.Input;
 
 namespace NLayer.WPFMVVM.ViewModel
 {
-    public class CustomerSearchViewModel : ObservableObject, ICustomerSearchView
+    public class LogSearchViewModel : ObservableObject, I_LogSearchView
     {
         #region Properties
 
-        private MVVMCommand.ICommand _onDoReset;
-        public MVVMCommand.ICommand OnDoReset
+        private ICommand _onDoReset;
+        public ICommand OnDoReset
         {
             get { return _onDoReset ?? (_onDoReset = new RelayCommand(param => DoReset.Execute())); }
         }
 
-        private MVVMCommand.ICommand _onDoSearch;
-        public MVVMCommand.ICommand OnDoSearch
+        private ICommand _onDoSearch;
+        public ICommand OnDoSearch
         {
             get { return _onDoSearch ?? (_onDoSearch = new RelayCommand(param => DoSearch.Execute())); }
         }
@@ -28,14 +28,14 @@ namespace NLayer.WPFMVVM.ViewModel
 
         #region Constructors
 
-        public CustomerSearchViewModel()
+        public LogSearchViewModel()
         {
-            new CustomerSearchPresenter(this);
+            new LogSearchPresenter(this);
         }
 
         #endregion
 
-        #region ICustomerSearchView
+        #region I_LogSearchView
 
         private string _searchQuery;
         public string SearchQuery
@@ -44,8 +44,8 @@ namespace NLayer.WPFMVVM.ViewModel
             set { _searchQuery = value; RaisePropertyChanged(() => SearchQuery); }
         }
 
-        public PatternsCommand.ICommand DoReset { get; set; }
-        public PatternsCommand.ICommand DoSearch { get; set; }
+        public I_Command DoReset { get; set; }
+        public I_Command DoSearch { get; set; }
 
         private IList<string> _searchResults;
         public IList<string> SearchResults

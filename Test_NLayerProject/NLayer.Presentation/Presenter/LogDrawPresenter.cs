@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 namespace NLayer.Presentation.Presenter
 {
-    public class DrawLogPresenter
+    public class LogDrawPresenter
     {
         private LogService _service;
-        private IDrawLogView _view;
+        private I_LogDrawView _view;
 
         #region Constructors
 
-        public DrawLogPresenter(IDrawLogView view)
+        public LogDrawPresenter(I_LogDrawView view)
         {
             _service = LogService.Instance;
             _view = view;
             _view.Name = string.Empty;
-            _view.DoDraw = new SimpleCommand(DrawLog);
+            _view.DoDraw = new SimpleCommand(LogDraw);
             _view.Color = string.Empty;
             _view.Thickness = 0;
             _view.Points = new List<KeyValuePair<double, double>>();
@@ -28,11 +28,11 @@ namespace NLayer.Presentation.Presenter
 
         #region Methods
 
-        public void DrawLog()
+        public void LogDraw()
         {
             _view.Points.Clear();
 
-            DrawLogResponse resp = _service.GetDrawLog(_view.Name);
+            LogDrawResponse resp = _service.GetLogDraw(_view.Name);
             _view.Name = resp.Name;
             _view.Color = resp.Color;
             _view.Thickness = resp.Thickness;

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace NLayer.Test.Mock
 {
-    public class DrawLogViewMock : IDrawLogView
+    public class LogDrawViewMock : I_LogDrawView
     {
         #region Properties
 
         public string Name { get; set; }
-        public ICommand DoDraw { get; set; }
+        public I_Command DoDraw { get; set; }
         public string Color { get; set; }
         public int Thickness { get; set; }
         public IList<KeyValuePair<double, double>> Points { get; set; }

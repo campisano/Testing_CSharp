@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NLayer.Domain.InMemoryRepository
 {
-    public class InMemoryLogApparenceRepository : ILogApparenceRepository
+    public class InMemoryLogApparenceRepository : I_LogApparenceRepository
     {
         private IList<LogApparence> _logApparences;
 
@@ -23,7 +23,7 @@ namespace NLayer.Domain.InMemoryRepository
 
         #endregion
 
-        #region Methods
+        #region I_LogApparenceRepository Methods
 
         public LogApparence GetLogApparence(string name)
         {

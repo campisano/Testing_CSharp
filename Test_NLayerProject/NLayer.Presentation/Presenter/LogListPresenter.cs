@@ -7,11 +7,11 @@ namespace NLayer.Presentation.Presenter
     public class LogListPresenter
     {
         private LogService _service;
-        private ILogListView _view;
+        private I_LogListView _view;
 
         #region Constructors
 
-        public LogListPresenter(ILogListView view)
+        public LogListPresenter(I_LogListView view)
         {
             _service = LogService.Instance;
             _view = view;
@@ -27,7 +27,7 @@ namespace NLayer.Presentation.Presenter
         {
             _view.Logs.Clear();
 
-            foreach (var item in _service.GetAllLogsName())
+            foreach (var item in _service.GetAllLogNames())
             {
                 _view.Logs.Add(item);
             }

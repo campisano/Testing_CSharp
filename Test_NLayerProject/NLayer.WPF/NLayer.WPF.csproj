@@ -52,15 +52,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CustomerSearchView.xaml">
+    <Page Include="LogSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="CustomerSearchView.xaml.cs">
-      <DependentUpon>CustomerSearchView.xaml</DependentUpon>
+    <Compile Include="LogSearchView.xaml.cs">
+      <DependentUpon>LogSearchView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ImportLogView.xaml">
+    <Page Include="LogImportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -74,8 +74,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImportLogView.xaml.cs">
-      <DependentUpon>ImportLogView.xaml</DependentUpon>
+    <Compile Include="LogImportView.xaml.cs">
+      <DependentUpon>LogImportView.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogListView.xaml.cs">
       <DependentUpon>LogListView.xaml</DependentUpon>

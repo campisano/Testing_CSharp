@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NLayer.Test.Mock
 {
-    public class LogListViewMock : ILogListView
+    public class LogListViewMock : I_LogListView
     {
         #region Properties
 

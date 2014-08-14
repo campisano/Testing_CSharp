@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace NLayer.WPF
 {
-    public partial class LogListView : Window, ILogListView
+    public partial class LogListView : Window, I_LogListView
     {
         #region Constructors
 
@@ -19,7 +19,7 @@ namespace NLayer.WPF
 
         #endregion
 
-        #region IImportLogView
+        #region I_LogListView
 
         public IList<string> Logs
         {

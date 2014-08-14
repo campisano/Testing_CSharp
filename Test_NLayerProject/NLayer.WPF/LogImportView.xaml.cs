@@ -1,18 +1,19 @@
-﻿using NLayer.Presentation.IView;
+﻿using NLayer.Common.Pattern.Command;
+using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Windows;
 
 namespace NLayer.WPF
 {
-    public partial class ImportLogView : Window, IImportLogView
+    public partial class LogImportView : Window, I_LogImportView
     {
         #region Constructors
 
-        public ImportLogView()
+        public LogImportView()
         {
             InitializeComponent();
 
-            new ImportLogPresenter(this);
+            new LogImportPresenter(this);
         }
 
         #endregion
@@ -26,11 +27,11 @@ namespace NLayer.WPF
 
         #endregion
 
-        #region IImportLogView
+        #region I_LogImportView
 
         public string InputFilePath { get { return xamlPath.Text; } set { xamlPath.Text = value; } }
         public string LogName { get { return xamlName.Text; } set { xamlName.Text = value; } }
-        public Common.Pattern.Command.ICommand DoImport { get; set; }
+        public I_Command DoImport { get; set; }
         public string MessageResult { get { return xamlMessage.Text; } set { xamlMessage.Text = value; } }
 
         #endregion

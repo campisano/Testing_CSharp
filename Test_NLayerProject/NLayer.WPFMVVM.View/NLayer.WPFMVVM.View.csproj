@@ -52,8 +52,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerSearchView.xaml.cs">
-      <DependentUpon>CustomerSearchView.xaml</DependentUpon>
+    <Compile Include="LogSearchView.xaml.cs">
+      <DependentUpon>LogSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialogService.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -83,7 +83,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CustomerSearchView.xaml">
+    <Page Include="LogSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

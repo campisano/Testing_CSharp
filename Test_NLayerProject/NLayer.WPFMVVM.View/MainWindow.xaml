@@ -5,10 +5,10 @@
     <StackPanel Orientation="Vertical">
         <Label Content="MVVM" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Orientation="Vertical">
-            <Button Content="OpenCustomerSearch" Command="{Binding OnOpenCustomerSearch}"/>
-            <Button Content="OpenImportLog" Command="{Binding OnOpenImportLog}"/>
+            <Button Content="OpenLogSearch" Command="{Binding OnOpenLogSearch}"/>
+            <Button Content="OpenLogImport" Command="{Binding OnOpenLogImport}"/>
             <Button Content="OpenLogList" Command="{Binding OnOpenLogList}"/>
-            <Button Content="OpenDrawLog" Command="{Binding OnOpenDrawLog}"/>
+            <Button Content="OpenLogDraw" Command="{Binding OnOpenLogDraw}"/>
         </StackPanel>
     </StackPanel>
 </Window>

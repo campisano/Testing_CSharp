@@ -12,27 +12,25 @@ using System.Linq;
 namespace NLayer.Test.Test
 {
     [TestClass]
-    public class ImportLogPresenterTest
+    public class LogImportPresenterTest
     {
         [TestMethod]
         public void ShouldViewDoImportReturnConfirmation()
         {
-            // Prepare
+            // Arrange
             List<Log> logs = new List<Log>();
-            ILogRepository repository = new InMemoryLogRepository(logs);
+            I_LogRepository repository = new InMemoryLogRepository(logs);
             LogService.Instance.LogRepository = repository;
 
-            IImportLogView view = new ImportLogViewMock();
-            {
-                ImportLogPresenter presenter = new ImportLogPresenter(view);
-            }
-
             // Act
+            I_LogImportView view = new LogImportViewMock();
+            LogImportPresenter presenter = new LogImportPresenter(view);
+
             view.InputFilePath = "Data/DTC.dat";
             view.LogName = "DTC";
             view.DoImport.Execute();
 
-            // Test
+            // Assert
             Assert.AreEqual(1, repository.GetAllLogs().Count());
             Assert.AreEqual("Log imported: " + repository.GetAllLogs().First().Values.Count + " points.", view.MessageResult);
         }

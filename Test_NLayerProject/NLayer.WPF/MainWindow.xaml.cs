@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace NLayer.WPF
 {
-    public partial class MainWindow : Window, IMainWindowView
+    public partial class MainWindow : Window, I_MainWindowView
     {
         #region Constructors
 
@@ -20,14 +20,14 @@ namespace NLayer.WPF
 
         #region Methods
 
-        private void OnOpenCustomerSearch(object sender, RoutedEventArgs e)
+        private void OnOpenLogSearch(object sender, RoutedEventArgs e)
         {
-            DoOpenCustomerSearch.Execute();
+            DoOpenLogSearch.Execute();
         }
 
-        private void OnOpenImportLog(object sender, RoutedEventArgs e)
+        private void OnOpenLogImport(object sender, RoutedEventArgs e)
         {
-            DoOpenImportLog.Execute();
+            DoOpenLogImport.Execute();
         }
 
         private void OnOpenLogList(object sender, RoutedEventArgs e)
@@ -35,19 +35,19 @@ namespace NLayer.WPF
             DoOpenLogList.Execute();
         }
 
-        private void OnOpenDrawLog(object sender, RoutedEventArgs e)
+        private void OnOpenLogDraw(object sender, RoutedEventArgs e)
         {
-            DoOpenDrawLog.Execute();
+            DoOpenLogDraw.Execute();
         }
 
         #endregion
 
-        #region IMainWindowView
+        #region I_MainWindowView
 
-        public ICommand DoOpenCustomerSearch { get; set; }
-        public ICommand DoOpenImportLog { get; set; }
-        public ICommand DoOpenLogList { get; set; }
-        public ICommand DoOpenDrawLog { get; set; }
+        public I_Command DoOpenLogSearch { get; set; }
+        public I_Command DoOpenLogImport { get; set; }
+        public I_Command DoOpenLogList { get; set; }
+        public I_Command DoOpenLogDraw { get; set; }
 
         #endregion
     }

@@ -15,8 +15,8 @@ namespace NLayer.Domain.Service.SystemOperation
 
         #region Properties
 
-        public ILogRepository LogRepository { private get; set; }
-        public ILogApparenceRepository LogApparenceRepository { private get; set; }
+        public I_LogRepository LogRepository { private get; set; }
+        public I_LogApparenceRepository LogApparenceRepository { private get; set; }
 
         public static LogService Instance
         {
@@ -37,9 +37,14 @@ namespace NLayer.Domain.Service.SystemOperation
 
         #region public
 
-        public IEnumerable<string> GetAllLogsName()
+        public IEnumerable<string> GetAllLogNames()
         {
             return LogRepository.GetAllLogs().Select(l => l.Name).ToList();
+        }
+
+        public IEnumerable<string> SearchLogsByName(string name)
+        {
+            return LogRepository.SearchLogsByName(name).Select(l => l.Name).ToList();
         }
 
         public bool IsNewLogNameValid(string logName)
@@ -54,7 +59,7 @@ namespace NLayer.Domain.Service.SystemOperation
             return !logs.Where(d => d.Name.Equals(logName)).Any();
         }
 
-        public bool IsImportLogFilePathValid(string inputFilePath)
+        public bool IsLogImportFilePathValid(string inputFilePath)
         {
             // TODO [CMP] usar classe de infraestrutura
             return File.Exists(inputFilePath);
@@ -62,7 +67,7 @@ namespace NLayer.Domain.Service.SystemOperation
 
         public bool Import(string inputFilePath, string logName)
         {
-            if (!IsImportLogFilePathValid(inputFilePath))
+            if (!IsLogImportFilePathValid(inputFilePath))
             {
                 return false;
             }
@@ -86,12 +91,12 @@ namespace NLayer.Domain.Service.SystemOperation
             logAp.Set(color, thickness);
         }
 
-        public DrawLogResponse GetDrawLog(string name)
+        public LogDrawResponse GetLogDraw(string name)
         {
             Log log = LogRepository.GetLog(name);
             LogApparence logAp = LogApparenceRepository.GetLogApparence(name);
 
-            return new DrawLogResponse(log.Name, log.Values, logAp.Color, logAp.Thickness);
+            return new LogDrawResponse(log.Name, log.Values, logAp.Color, logAp.Thickness);
         }
 
         public int GetLogPointsNum(string name)

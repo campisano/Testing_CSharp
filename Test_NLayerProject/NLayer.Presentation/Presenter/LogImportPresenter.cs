@@ -4,14 +4,14 @@ using NLayer.Presentation.IView;
 
 namespace NLayer.Presentation.Presenter
 {
-    public class ImportLogPresenter
+    public class LogImportPresenter
     {
         private LogService _service;
-        private IImportLogView _view;
+        private I_LogImportView _view;
 
         #region Constructors
 
-        public ImportLogPresenter(IImportLogView view)
+        public LogImportPresenter(I_LogImportView view)
         {
             _service = LogService.Instance;
             _view = view;
@@ -38,7 +38,7 @@ namespace NLayer.Presentation.Presenter
             {
                 _view.MessageResult = "Log name invalid!";
             }
-            else if (!_service.IsImportLogFilePathValid(inputFilePath))
+            else if (!_service.IsLogImportFilePathValid(inputFilePath))
             {
                 _view.MessageResult = "Log file path invalid!";
             }

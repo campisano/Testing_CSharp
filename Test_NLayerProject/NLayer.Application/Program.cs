@@ -2,7 +2,6 @@
 using NLayer.Common.Pattern;
 using NLayer.Domain.Entity;
 using NLayer.Domain.InMemoryRepository;
-using NLayer.Domain.Repository;
 using NLayer.Domain.Service.SystemOperation;
 using NLayer.Presentation.IView;
 using NLayer.WPFMVVM.View;
@@ -34,39 +33,30 @@ namespace NLayer.Application
         {
             try
             {
-                List<string> customers = new List<string>();
-                customers.Add("Agremis");
-                customers.Add("Bruno");
-                customers.Add("Riccardo");
-                customers.Add("Robert");
-                customers.Add("Rodrigo");
-                customers.Add("Michel");
-                ICustomerRepository custRepository = new InMemoryCustomerRepository(customers);
-                CustomerService.Instance.Repository = custRepository;
-
                 List<Log> logs = new List<Log>();
                 logs.Add(new Log("GRAY"));
                 logs.Add(new Log("DTS"));
+                logs.Add(new Log("Gsobr"));
                 LogService.Instance.LogRepository = new InMemoryLogRepository(logs);
                 LogService.Instance.LogApparenceRepository = new InMemoryLogApparenceRepository(logs);
 
                 var container = IODContainer.Instance;
 
-                container.RegisterType(typeof(IDialogService), typeof(DialogService));
+                container.RegisterType(typeof(I_DialogService), typeof(DialogService));
 
-                //container.RegisterType(typeof(IMainWindowView), typeof(NLayer.WPFMVVM.View.MainWindow));
-                container.RegisterType(typeof(IMainWindowView), typeof(NLayer.WPF.MainWindow));
+                container.RegisterType(typeof(I_MainWindowView), typeof(NLayer.WPFMVVM.View.MainWindow));
+                //container.RegisterType(typeof(I_MainWindowView), typeof(NLayer.WPF.MainWindow));
 
-                //container.RegisterType(typeof(ICustomerSearchView), typeof(NLayer.WPFMVVM.View.CustomerSearchView));
-                container.RegisterType(typeof(ICustomerSearchView), typeof(NLayer.WPF.CustomerSearchView));
+                container.RegisterType(typeof(I_LogSearchView), typeof(NLayer.WPFMVVM.View.LogSearchView));
+                //container.RegisterType(typeof(I_LogSearchView), typeof(NLayer.WPF.LogSearchView));
 
-                //container.RegisterType(typeof(IImportLogView), typeof(NLayer.WPFMVVM.View.ImportLogView));
-                container.RegisterType(typeof(IImportLogView), typeof(NLayer.WPF.ImportLogView));
+                //container.RegisterType(typeof(I_LogImportView), typeof(NLayer.WPFMVVM.View.LogImportView));
+                container.RegisterType(typeof(I_LogImportView), typeof(NLayer.WPF.LogImportView));
 
-                //container.RegisterType(typeof(IImportLogView), typeof(NLayer.WPFMVVM.View.ImportLogView));
-                container.RegisterType(typeof(ILogListView), typeof(NLayer.WPF.LogListView));
+                //container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPFMVVM.View.LogListView));
+                container.RegisterType(typeof(I_LogListView), typeof(NLayer.WPF.LogListView));
 
-                var mainWindow = container.Resolve<Window>(typeof(IMainWindowView));
+                var mainWindow = container.Resolve<Window>(typeof(I_MainWindowView));
                 mainWindow.Show();
                 mainWindow.Closed += (s, e) => System.Windows.Threading.Dispatcher.ExitAllFrames();
 

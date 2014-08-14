@@ -1,36 +1,37 @@
 ﻿using NLayer.Common.MVVM;
+using NLayer.Common.Pattern.Command;
 using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
-using MVVMCommand = System.Windows.Input;
+using System.Windows.Input;
 
 namespace NLayer.WPFMVVM.ViewModel
 {
-    public class MainWindowViewModel : ObservableObject, IMainWindowView
+    public class MainWindowViewModel : ObservableObject, I_MainWindowView
     {
         #region Properties
 
-        private MVVMCommand.ICommand _onOpenCustomerSearch;
-        public MVVMCommand.ICommand OnOpenCustomerSearch
+        private ICommand _onOpenLogSearch;
+        public ICommand OnOpenLogSearch
         {
-            get { return _onOpenCustomerSearch ?? (_onOpenCustomerSearch = new RelayCommand(param => DoOpenCustomerSearch.Execute())); }
+            get { return _onOpenLogSearch ?? (_onOpenLogSearch = new RelayCommand(param => DoOpenLogSearch.Execute())); }
         }
 
-        private MVVMCommand.ICommand _onOpenImportLog;
-        public MVVMCommand.ICommand OnOpenImportLog
+        private ICommand _onOpenLogImport;
+        public ICommand OnOpenLogImport
         {
-            get { return _onOpenImportLog ?? (_onOpenImportLog = new RelayCommand(param => DoOpenImportLog.Execute())); }
+            get { return _onOpenLogImport ?? (_onOpenLogImport = new RelayCommand(param => DoOpenLogImport.Execute())); }
         }
 
-        private MVVMCommand.ICommand _onOpenLogList;
-        public MVVMCommand.ICommand OnOpenLogList
+        private ICommand _onOpenLogList;
+        public ICommand OnOpenLogList
         {
             get { return _onOpenLogList ?? (_onOpenLogList = new RelayCommand(param => DoOpenLogList.Execute())); }
         }
 
-        private MVVMCommand.ICommand _onOpenDrawLog;
-        public MVVMCommand.ICommand OnOpenDrawLog
+        private ICommand _onOpenLogDraw;
+        public ICommand OnOpenLogDraw
         {
-            get { return _onOpenDrawLog ?? (_onOpenDrawLog = new RelayCommand(param => DoOpenDrawLog.Execute())); }
+            get { return _onOpenLogDraw ?? (_onOpenLogDraw = new RelayCommand(param => DoOpenLogDraw.Execute())); }
         }
 
         #endregion
@@ -44,12 +45,12 @@ namespace NLayer.WPFMVVM.ViewModel
 
         #endregion
 
-        #region IMainWindowView
+        #region I_MainWindowView
 
-        public Common.Pattern.Command.ICommand DoOpenCustomerSearch { get; set; }
-        public Common.Pattern.Command.ICommand DoOpenImportLog { get; set; }
-        public Common.Pattern.Command.ICommand DoOpenLogList { get; set; }
-        public Common.Pattern.Command.ICommand DoOpenDrawLog { get; set; }
+        public I_Command DoOpenLogSearch { get; set; }
+        public I_Command DoOpenLogImport { get; set; }
+        public I_Command DoOpenLogList { get; set; }
+        public I_Command DoOpenLogDraw { get; set; }
 
         #endregion
     }

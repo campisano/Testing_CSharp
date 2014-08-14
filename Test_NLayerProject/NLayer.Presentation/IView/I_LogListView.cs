@@ -2,7 +2,7 @@
 
 namespace NLayer.Presentation.IView
 {
-    public interface ILogListView
+    public interface I_LogListView
     {
         IList<string> Logs { get; set; }
     }

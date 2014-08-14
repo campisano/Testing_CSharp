@@ -11,37 +11,34 @@ using System.Collections.Generic;
 namespace NLayer.Test.Test
 {
     [TestClass]
-    public class DrawLogPresenterTest
+    public class LogDrawPresenterTest
     {
         [TestMethod]
         public void ShouldViewShowSpecificLog()
         {
-            // Prepare
+            // Arrange
             List<Log> logs = new List<Log>();
             logs.Add(new Log("DTC"));
             logs.Add(new Log("GRAY"));
             logs.Add(new Log("DTS"));
-            ILogRepository logRepository = new InMemoryLogRepository(logs);
+            I_LogRepository logRepository = new InMemoryLogRepository(logs);
             LogService.Instance.LogRepository = logRepository;
-            ILogApparenceRepository logApparenceRepository = new InMemoryLogApparenceRepository(logs);
+            I_LogApparenceRepository logApparenceRepository = new InMemoryLogApparenceRepository(logs);
             LogService.Instance.LogApparenceRepository = logApparenceRepository;
-
 
             Log testLog = logs[1];
             string color = "Yellow";
             int thickness = 3;
             LogService.Instance.SetLogApparence(testLog.Name, color, thickness); //TODO [CMP] enum seem better for color and thickness too
 
-            IDrawLogView view = new DrawLogViewMock();
-            {
-                DrawLogPresenter presenter = new DrawLogPresenter(view);
-            }
-
             // Act
+            I_LogDrawView view = new LogDrawViewMock();
+            LogDrawPresenter presenter = new LogDrawPresenter(view);
+
             view.Name = testLog.Name;
             view.DoDraw.Execute();
 
-            // Test
+            // Assert
             Assert.AreEqual(testLog.Name, view.Name);
             Assert.AreEqual(color, view.Color);
             Assert.AreEqual(thickness, view.Thickness);

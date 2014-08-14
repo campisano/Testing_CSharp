@@ -17,22 +17,19 @@ namespace NLayer.Test.Test
         [TestMethod]
         public void ShouldViewOpenReturnAllLogs()
         {
-            // Prepare
+            // Arrange
             List<Log> logs = new List<Log>();
-            logs.Add(new Log("DTC"));
             logs.Add(new Log("GRAY"));
             logs.Add(new Log("DTS"));
-            ILogRepository repository = new InMemoryLogRepository(logs);
+            logs.Add(new Log("Gsobr"));
+            I_LogRepository repository = new InMemoryLogRepository(logs);
             LogService.Instance.LogRepository = repository;
 
-            ILogListView view = new LogListViewMock();
-            {
-                LogListPresenter presenter = new LogListPresenter(view);
-            }
-
             // Act
+            I_LogListView view = new LogListViewMock();
+            LogListPresenter presenter = new LogListPresenter(view);
 
-            // Test
+            // Assert
             Assert.AreEqual(logs.Count, view.Logs.Count);
             CollectionAssert.AreEquivalent(logs.Select(l => l.Name).ToList(), view.Logs.ToList());
         }

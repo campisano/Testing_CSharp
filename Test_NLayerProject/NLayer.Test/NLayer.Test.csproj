@@ -53,14 +53,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Mock\DrawLogViewMock.cs" />
+    <Compile Include="Mock\LogDrawViewMock.cs" />
     <Compile Include="Mock\LogListViewMock.cs" />
-    <Compile Include="Mock\ImportLogViewMock.cs" />
-    <Compile Include="Mock\CustomerSearchViewMock.cs" />
-    <Compile Include="Test\ImportLogPresenterTest.cs" />
-    <Compile Include="Test\CustomerSearchPresenterTest.cs" />
+    <Compile Include="Mock\LogImportViewMock.cs" />
+    <Compile Include="Mock\LogSearchViewMock.cs" />
+    <Compile Include="Test\LogImportPresenterTest.cs" />
+    <Compile Include="Test\LogSearchPresenterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\DrawLogPresenterTest.cs" />
+    <Compile Include="Test\LogDrawPresenterTest.cs" />
     <Compile Include="Test\LogListPresenterTest.cs" />
   </ItemGroup>
   <ItemGroup>
