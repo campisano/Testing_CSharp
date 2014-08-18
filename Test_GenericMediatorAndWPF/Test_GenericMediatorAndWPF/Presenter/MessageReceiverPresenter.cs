@@ -16,7 +16,7 @@ namespace Test_GenericMediatorAndWPF.Presenter
             _service.Register(this);
             _view = view;
 
-            Function = ReceiveMessageOperation;
+            MediableFunction = ReceiveMessageOperation;
         }
 
         #endregion

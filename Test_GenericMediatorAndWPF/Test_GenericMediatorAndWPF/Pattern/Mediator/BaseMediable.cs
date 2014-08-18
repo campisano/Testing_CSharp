@@ -7,7 +7,7 @@
 
         #region Properties
 
-        public MediableReceiveFunction Function { get; set; }
+        public MediableReceiveFunction MediableFunction { get; set; }
 
         #endregion
 
@@ -33,9 +33,9 @@
 
         public void Receive(object message)
         {
-            if (Function != null)
+            if (MediableFunction != null)
             {
-                Function(message);
+                MediableFunction(message);
             }
         }
 

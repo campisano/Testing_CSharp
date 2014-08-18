@@ -25,14 +25,14 @@ namespace Test_GenericMediatorAndWPF.View
 
         #endregion
 
-        #region I_SendReceiverView
+        #region I_MessageSenderView
 
         public string MessageToSend { get { return xamlMessageToSend.Text; } set { xamlMessageToSend.Text = value; } }
         public I_Command DoSendMessage { get; set; }
 
         #endregion
 
-        #region I_SendReceiverView
+        #region I_MessageReceiverView
 
         public string ReceivedMessage { get { return xamlReceivedMessage.Text; } set { xamlReceivedMessage.Text = value; } }
 
