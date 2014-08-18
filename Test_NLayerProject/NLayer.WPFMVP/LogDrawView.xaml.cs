@@ -4,7 +4,6 @@ using NLayer.Presentation.IView;
 using NLayer.Presentation.Presenter;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows;
 
 namespace NLayer.WPFMVP
