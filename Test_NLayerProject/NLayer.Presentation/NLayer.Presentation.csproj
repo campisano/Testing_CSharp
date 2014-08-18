@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IView\I_LogChangeDisplayPropertiesView.cs" />
     <Compile Include="IView\I_MainWindowView.cs" />
     <Compile Include="IView\I_LogDrawView.cs" />
+    <Compile Include="Presenter\LogChangeDisplayPropertiesPresenter.cs" />
     <Compile Include="Presenter\MainWindowPresenter.cs" />
     <Compile Include="Presenter\LogImportPresenter.cs" />
     <Compile Include="Presenter\LogSearchPresenter.cs" />

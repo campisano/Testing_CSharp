@@ -53,10 +53,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Mock\LogChangeDisplayPropertiesViewMock.cs" />
     <Compile Include="Mock\LogDrawViewMock.cs" />
     <Compile Include="Mock\LogListViewMock.cs" />
     <Compile Include="Mock\LogImportViewMock.cs" />
     <Compile Include="Mock\LogSearchViewMock.cs" />
+    <Compile Include="Test\LogChangeDisplayPropertiesTest.cs" />
     <Compile Include="Test\LogImportPresenterTest.cs" />
     <Compile Include="Test\LogSearchPresenterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
