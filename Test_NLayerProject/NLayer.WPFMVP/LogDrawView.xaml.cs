@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace NLayer.WPFMVP
 {
-    public partial class LogDrawView : Window, I_LogDrawView
+    public partial class LogDrawView : Window, I_LogDrawView, I_LogListView
     {
         #region Constructors
 
@@ -18,6 +18,7 @@ namespace NLayer.WPFMVP
             InitializeComponent();
 
             new LogDrawPresenter(this);
+            new LogListPresenter(this);
         }
 
         #endregion
@@ -42,11 +43,21 @@ namespace NLayer.WPFMVP
 
         #region I_LogDrawView
 
-        public string LogName { get { return xamlLogName.Text; } set { xamlLogName.Text = value; } }
+        public string LogName { get { return (string)xamlLogName.SelectedValue; } set { xamlLogName.SelectedValue = value; } }
         public I_Command DoDraw { get; set; }
         public string Color { get; set; }
         public int Thickness { get; set; }
         public IList<KeyValuePair<double, double>> Points { get; set; }
+
+        #endregion
+
+        #region I_LogListView
+
+        public IList<string> Logs
+        {
+            get { return (IList<string>)xamlLogName.ItemsSource; }
+            set { xamlLogName.ItemsSource = new ObservableCollection<string>(value); }
+        }
 
         #endregion
     }

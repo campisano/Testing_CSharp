@@ -19,7 +19,7 @@
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Log name" />
-                <TextBox Name="xamlLogName" Width="100" />
+                <ComboBox Name="xamlLogName" Width="100" />
                 <Button Content="Draw" Width="75" Click="OnDraw" />
             </StackPanel>
         </Grid>
