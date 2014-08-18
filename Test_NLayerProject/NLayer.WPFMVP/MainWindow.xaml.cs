@@ -40,6 +40,11 @@ namespace NLayer.WPFMVP
             DoOpenLogDraw.Execute();
         }
 
+        private void OnOpenLogChangeDisplayProps(object sender, RoutedEventArgs e)
+        {
+            DoOpenLogChangeDisplayProps.Execute();
+        }
+
         #endregion
 
         #region I_MainWindowView
@@ -48,6 +53,7 @@ namespace NLayer.WPFMVP
         public I_Command DoOpenLogImport { get; set; }
         public I_Command DoOpenLogList { get; set; }
         public I_Command DoOpenLogDraw { get; set; }
+        public I_Command DoOpenLogChangeDisplayProps { get; set; }
 
         #endregion
     }

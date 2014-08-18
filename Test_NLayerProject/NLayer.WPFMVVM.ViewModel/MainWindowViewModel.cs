@@ -34,6 +34,12 @@ namespace NLayer.WPFMVVM.ViewModel
             get { return _onOpenLogDraw ?? (_onOpenLogDraw = new RelayCommand(param => DoOpenLogDraw.Execute())); }
         }
 
+        private ICommand _onOpenLogChangeDisplayProps;
+        public ICommand OnOpenLogChangeDisplayProps
+        {
+            get { return _onOpenLogChangeDisplayProps ?? (_onOpenLogChangeDisplayProps = new RelayCommand(param => DoOpenLogChangeDisplayProps.Execute())); }
+        }
+
         #endregion
 
         #region Constructors
@@ -51,6 +57,7 @@ namespace NLayer.WPFMVVM.ViewModel
         public I_Command DoOpenLogImport { get; set; }
         public I_Command DoOpenLogList { get; set; }
         public I_Command DoOpenLogDraw { get; set; }
+        public I_Command DoOpenLogChangeDisplayProps { get; set; }
 
         #endregion
     }

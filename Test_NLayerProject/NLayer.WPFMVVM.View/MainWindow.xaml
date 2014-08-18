@@ -9,6 +9,7 @@
             <Button Content="OpenLogImport" Command="{Binding OnOpenLogImport}"/>
             <Button Content="OpenLogList" Command="{Binding OnOpenLogList}"/>
             <Button Content="OpenLogDraw" Command="{Binding OnOpenLogDraw}"/>
+            <Button Content="OpenLogChangeDisplayProps" Command="{Binding OnOpenLogChangeDisplayProps}"/>
         </StackPanel>
     </StackPanel>
 </Window>

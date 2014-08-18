@@ -8,5 +8,6 @@ namespace NLayer.Presentation.IView
         I_Command DoOpenLogImport { get; set; }
         I_Command DoOpenLogList { get; set; }
         I_Command DoOpenLogDraw { get; set; }
+        I_Command DoOpenLogChangeDisplayProps { get; set; }
     }
 }

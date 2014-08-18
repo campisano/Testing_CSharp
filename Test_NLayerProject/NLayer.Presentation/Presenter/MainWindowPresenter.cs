@@ -20,6 +20,7 @@ namespace NLayer.Presentation.Presenter
             _view.DoOpenLogImport = new SimpleCommand(OpenLogImport);
             _view.DoOpenLogList = new SimpleCommand(OpenLogList);
             _view.DoOpenLogDraw = new SimpleCommand(OpenLogDraw);
+            _view.DoOpenLogChangeDisplayProps = new SimpleCommand(OpenLogChangeDisplayProps);
         }
 
         #endregion
@@ -44,6 +45,11 @@ namespace NLayer.Presentation.Presenter
         public void OpenLogDraw()
         {
             _service.ShowWindow(typeof(I_LogDrawView), false);
+        }
+
+        public void OpenLogChangeDisplayProps()
+        {
+            _service.ShowWindow(typeof(I_LogChangeDisplayPropertiesView), false);
         }
 
         #endregion

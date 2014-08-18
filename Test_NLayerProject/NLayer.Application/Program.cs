@@ -59,6 +59,9 @@ namespace NLayer.Application
                 //container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPFMVVM.View.LogDrawView));
                 container.RegisterType(typeof(I_LogDrawView), typeof(NLayer.WPFMVP.LogDrawView));
 
+                //container.RegisterType(typeof(I_LogChangeDisplayPropertiesView), typeof(NLayer.WPFMVVM.View.LogChangeDisplayPropertiesView));
+                container.RegisterType(typeof(I_LogChangeDisplayPropertiesView), typeof(NLayer.WPFMVP.LogChangeDisplayPropertiesView));
+
                 var mainWindow = container.Resolve<Window>(typeof(I_MainWindowView));
                 mainWindow.Show();
                 mainWindow.Closed += (s, e) => System.Windows.Threading.Dispatcher.ExitAllFrames();
