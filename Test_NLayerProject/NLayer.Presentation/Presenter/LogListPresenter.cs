@@ -9,7 +9,7 @@ namespace NLayer.Presentation.Presenter
     public class LogListPresenter : BaseMediable
     {
         private MessageService _message_service;
-        private LogService _service;
+        private LogService _log_service;
         private I_LogListView _view;
 
         #region Constructors
@@ -19,7 +19,7 @@ namespace NLayer.Presentation.Presenter
             _message_service = MessageService.Instance;
             _message_service.Register(this, typeof(MessageLogImported));
             MediableFunction = UpdateList;
-            _service = LogService.Instance;
+            _log_service = LogService.Instance;
             _view = view;
             _view.Logs = new List<string>();
             Open();
@@ -33,7 +33,7 @@ namespace NLayer.Presentation.Presenter
         {
             _view.Logs.Clear();
 
-            foreach (var item in _service.GetAllLogNames())
+            foreach (var item in _log_service.GetAllLogNames())
             {
                 _view.Logs.Add(item);
             }

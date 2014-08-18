@@ -16,36 +16,39 @@ namespace NLayer.Test.Test
     [TestClass]
     public class LogSearchPresenterTest
     {
+        private I_LogRepository _repository;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            _repository = new InMemoryLogRepository(new List<Log>());
+            LogService.Instance.LogRepository = _repository;
+        }
+
         [TestMethod]
         public void ShouldViewOpenReturnAllLogs()
         {
             // Arrange
-            List<Log> logs = new List<Log>();
-            logs.Add(new Log("GRAY"));
-            logs.Add(new Log("DTS"));
-            logs.Add(new Log("Gsobr"));
-            I_LogRepository repository = new InMemoryLogRepository(logs);
-            LogService.Instance.LogRepository = repository;
+            _repository.AddLog(new Log("GRAY"));
+            _repository.AddLog(new Log("DTS"));
+            _repository.AddLog(new Log("Gsobr"));
 
             // Act
             I_LogSearchView view = new LogSearchViewMock();
             LogSearchPresenter presenter = new LogSearchPresenter(view);
 
             // Assert
-            Assert.AreEqual(logs.Count, view.SearchResults.Count);
-            CollectionAssert.AreEquivalent(logs.Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
+            Assert.AreEqual(3, view.SearchResults.Count);
+            CollectionAssert.AreEquivalent(_repository.GetAllLogs().Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
         }
 
         [TestMethod]
         public void ShouldViewDoSearchEmptyReturnAllLogs()
         {
             // Arrange
-            List<Log> logs = new List<Log>();
-            logs.Add(new Log("GRAY"));
-            logs.Add(new Log("DTS"));
-            logs.Add(new Log("Gsobr"));
-            I_LogRepository repository = new InMemoryLogRepository(logs);
-            LogService.Instance.LogRepository = repository;
+            _repository.AddLog(new Log("GRAY"));
+            _repository.AddLog(new Log("DTS"));
+            _repository.AddLog(new Log("Gsobr"));
 
             // Act
             I_LogSearchView view = new LogSearchViewMock();
@@ -55,20 +58,17 @@ namespace NLayer.Test.Test
             view.DoSearch.Execute();
 
             // Assert
-            Assert.AreEqual(logs.Count, view.SearchResults.Count);
-            CollectionAssert.AreEquivalent(logs.Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
+            Assert.AreEqual(3, view.SearchResults.Count);
+            CollectionAssert.AreEquivalent(_repository.GetAllLogs().Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
         }
 
         [TestMethod]
         public void ShouldViewDoSearchAgremisReturnAgremis()
         {
             // Arrange
-            List<Log> logs = new List<Log>();
-            logs.Add(new Log("GRAY"));
-            logs.Add(new Log("DTS"));
-            logs.Add(new Log("Gsobr"));
-            I_LogRepository repository = new InMemoryLogRepository(logs);
-            LogService.Instance.LogRepository = repository;
+            _repository.AddLog(new Log("GRAY"));
+            _repository.AddLog(new Log("DTS"));
+            _repository.AddLog(new Log("Gsobr"));
 
             // Act
             I_LogSearchView view = new LogSearchViewMock();
@@ -86,12 +86,9 @@ namespace NLayer.Test.Test
         public void ShouldViewResetAfterDoSearchReturnAllLogs()
         {
             // Arrange
-            List<Log> logs = new List<Log>();
-            logs.Add(new Log("GRAY"));
-            logs.Add(new Log("DTS"));
-            logs.Add(new Log("Gsobr"));
-            I_LogRepository repository = new InMemoryLogRepository(logs);
-            LogService.Instance.LogRepository = repository;
+            _repository.AddLog(new Log("GRAY"));
+            _repository.AddLog(new Log("DTS"));
+            _repository.AddLog(new Log("Gsobr"));
 
             // Act
             I_LogSearchView view = new LogSearchViewMock();
@@ -102,8 +99,27 @@ namespace NLayer.Test.Test
             view.DoReset.Execute();
 
             // Assert
-            Assert.AreEqual(logs.Count, view.SearchResults.Count);
-            CollectionAssert.AreEquivalent(logs.Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
+            Assert.AreEqual(3, view.SearchResults.Count);
+            CollectionAssert.AreEquivalent(_repository.GetAllLogs().Select(l => l.Name).ToList(), (List<string>)view.SearchResults);
+        }
+
+        [TestMethod]
+        public void SearchQueryMustBeEmptyAfterReset()
+        {
+            // Arrange
+            _repository.AddLog(new Log("GRAY"));
+            _repository.AddLog(new Log("DTS"));
+            _repository.AddLog(new Log("Gsobr"));
+
+            // Act
+            I_LogSearchView view = new LogSearchViewMock();
+            LogSearchPresenter presenter = new LogSearchPresenter(view);
+
+            view.SearchQuery = "Gsobr";
+            view.DoReset.Execute();
+
+            // Assert
+            Assert.AreEqual(string.Empty, view.SearchQuery);
         }
 
         //TODO [BSA]: dividir o test em unidades base (service / presenter / view)
