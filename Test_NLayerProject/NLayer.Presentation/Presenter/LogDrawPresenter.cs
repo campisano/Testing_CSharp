@@ -25,7 +25,7 @@ namespace NLayer.Presentation.Presenter
             _view = view;
             _view.LogName = string.Empty;
             _view.DoDraw = new SimpleCommand(LogDraw);
-            _view.Color = string.Empty;
+            _view.Color = "Black";
             _view.Thickness = 0;
             _view.Points = new List<KeyValuePair<double, double>>();
         }
