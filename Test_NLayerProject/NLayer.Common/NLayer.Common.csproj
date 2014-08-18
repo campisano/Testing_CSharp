@@ -46,6 +46,10 @@
     <Compile Include="Pattern\Command\SimpleCommand.cs" />
     <Compile Include="MVVM\I_DialogService.cs" />
     <Compile Include="Pattern\IODContainer.cs" />
+    <Compile Include="Pattern\Mediator\BaseMediable.cs" />
+    <Compile Include="Pattern\Mediator\BaseMediator.cs" />
+    <Compile Include="Pattern\Mediator\I_Mediable.cs" />
+    <Compile Include="Pattern\Mediator\I_Mediator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

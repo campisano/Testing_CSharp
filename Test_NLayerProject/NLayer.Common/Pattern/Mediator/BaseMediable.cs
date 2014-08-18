@@ -1,0 +1,51 @@
+﻿using System;
+
+namespace NLayer.Common.Pattern.Mediator
+{
+    public class BaseMediable : I_Mediable
+    {
+        private I_Mediator _mediator;
+        public delegate void MediableReceiveFunction(object message);
+
+        #region Properties
+
+        public MediableReceiveFunction MediableFunction { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public BaseMediable()
+        {
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void SetMediator(I_Mediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        public void UnSetMediator()
+        {
+            _mediator = null;
+        }
+
+        public void Receive(object message)
+        {
+            if (MediableFunction != null)
+            {
+                MediableFunction(message);
+            }
+        }
+
+        public void SendMessage(object message, Type type = null)
+        {
+            _mediator.Send(message, type);
+        }
+
+        #endregion
+    }
+}

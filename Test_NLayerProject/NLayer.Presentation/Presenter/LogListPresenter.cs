@@ -1,11 +1,14 @@
-﻿using NLayer.Domain.Service.SystemOperation;
+﻿using NLayer.Common.Pattern.Mediator;
+using NLayer.Domain.Service.SystemOperation;
+using NLayer.Domain.Service.SystemOperation.Message;
 using NLayer.Presentation.IView;
 using System.Collections.Generic;
 
 namespace NLayer.Presentation.Presenter
 {
-    public class LogListPresenter
+    public class LogListPresenter : BaseMediable
     {
+        private MessageService _message_service;
         private LogService _service;
         private I_LogListView _view;
 
@@ -13,6 +16,9 @@ namespace NLayer.Presentation.Presenter
 
         public LogListPresenter(I_LogListView view)
         {
+            _message_service = MessageService.Instance;
+            _message_service.Register(this, typeof(MessageLogImported));
+            MediableFunction = UpdateList;
             _service = LogService.Instance;
             _view = view;
             _view.Logs = new List<string>();
@@ -31,6 +37,13 @@ namespace NLayer.Presentation.Presenter
             {
                 _view.Logs.Add(item);
             }
+        }
+
+        public void UpdateList(object message)
+        {
+            MessageLogImported msg = (MessageLogImported)message;
+
+            _view.Logs.Add(msg.getLogName());
         }
 
         #endregion
